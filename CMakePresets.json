@@ -1,0 +1,106 @@
+{
+  "version": 3,
+  "configurePresets": [
+    {
+      "name": "global",
+      "hidden": true,
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "installDir": "${sourceDir}/out/install/${presetName}",
+      "cacheVariables": {
+        "GLFW_BUILD_DOCS": "OFF",
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "windows-base",
+      "description": "Target Windows with the Visual Studio development environment.",
+      "inherits": "global",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang-cl.exe",
+        "CMAKE_CXX_COMPILER": "clang-cl.exe"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Windows"
+      },
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      }
+    },
+    {
+      "name": "x64-debug",
+      "displayName": "x64 Debug",
+      "description": "Target Windows (64-bit) with the Visual Studio development environment. (Debug)",
+      "inherits": "windows-base",
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      },
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      }
+    },
+    {
+      "name": "x64-release",
+      "displayName": "x64 Release",
+      "description": "Target Windows (64-bit) with the Visual Studio development environment. (RelWithDebInfo)",
+      "inherits": "x64-debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      }
+    },
+    {
+      "name": "linux-base",
+      "description": "Target Linux with the VScode environment.",
+      "inherits": "global",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_CXX_COMPILER": "clang++"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      },
+      "architecture": {
+        "value": "x64",
+        "strategy": "external"
+      }
+    },
+    {
+      "name": "linux-x64-debug",
+      "displayName": "linux-x64-debug",
+      "description": "Target Linux (64-bit) with the VSCode development environment. (Debug)",
+      "inherits": "linux-base",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "linux-x64-release",
+      "displayName": "linux-x64-release",
+      "description": "Target Linux (64-bit) with the VSCode development environment. (Release)",
+      "inherits": "linux-base",
+      "binaryDir": "${sourceDir}/out/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    }
+  ]
+}

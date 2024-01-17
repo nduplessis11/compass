@@ -1,0 +1,14 @@
+---
+Checks: '-*,
+        clang-analyzer-*,
+        readability-*,
+        modernize-*,
+        bugprone-*,
+        performance-*,
+        concurrency-*,
+        cppcoreguidelines-*,
+        -clang-diagnostic-unused-command-line-argument,
+        -modernize-use-trailing-return-type,'
+WarningsAsErrors: ''
+HeaderFilterRegex: '.*'
+FormatStyle:     none
