@@ -9,5 +9,3 @@ constexpr bool CMPS_PLATFORM_APPLE = true;
 #else
 constexpr bool CMPS_PLATFORM_UNKNOWN = true;
 #endif
-
-constexpr int SECRET_VAL = 43;
