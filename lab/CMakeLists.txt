@@ -1,3 +1,3 @@
-﻿add_executable(lab "src/lab.cpp" "src/lab.h")
+﻿add_executable(lab "src/lab-application.cpp" )
 
 target_link_libraries(lab compass)
