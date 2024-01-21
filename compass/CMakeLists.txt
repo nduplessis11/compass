@@ -6,15 +6,16 @@ configure_file(
 
 # List of source files
 set(SRC_FILES
-    "src/application.cpp"
+    "src/core/application.cpp"
 )
 
 # List of header files
 set(HDR_FILES
-    "src/defines.h"
+    "src/core/defines.h"
     "include/compass.h"
-    "src/application.h"
- "src/entry-point.h")
+    "src/core/application.h"
+    "src/core/entry-point.h" 
+    "src/platform/platform.h")
 
 add_library(compass STATIC ${SRC_FILES} ${HDR_FILES})
 
