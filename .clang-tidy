@@ -1,14 +1,13 @@
 ---
-Checks: '-*,
-        clang-analyzer-*,
-        readability-*,
-        modernize-*,
-        bugprone-*,
-        performance-*,
-        concurrency-*,
-        cppcoreguidelines-*,
-        -clang-diagnostic-unused-command-line-argument,
-        -modernize-use-trailing-return-type,'
+Checks: '*,
+        -abseil-*,
+        -altera-*,
+        -android-*,
+        -fuchsia-*,
+        -google-*,
+        -llvm*,
+        -zircon-*,
+        -modernize-use-trailing-return-type'
 WarningsAsErrors: ''
 HeaderFilterRegex: '.*'
 FormatStyle:     none

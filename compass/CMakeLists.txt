@@ -1,9 +1,3 @@
-# Configure version header
-configure_file(
-    "${PROJECT_SOURCE_DIR}/version.h.in"
-    "${PROJECT_BINARY_DIR}/version.h"
-)
-
 # List of source files
 set(SRC_FILES
     "src/application.cpp"
@@ -14,7 +8,8 @@ set(HDR_FILES
     "src/defines.h"
     "include/compass.h"
     "src/application.h"
- "src/entry-point.h")
+    "src/entry-point.h"
+)
 
 add_library(compass STATIC ${SRC_FILES} ${HDR_FILES})
 
@@ -22,9 +17,5 @@ add_library(compass STATIC ${SRC_FILES} ${HDR_FILES})
 # Targets linked to compass are vicariously linked to PUBLIC
 target_include_directories(compass
     PUBLIC "include"
-    PUBLIC ${PROJECT_BINARY_DIR}
-)
-
-target_link_libraries(${PROJECT_NAME}
-    
+    PUBLIC "${PROJECT_BINARY_DIR}"
 )
