@@ -1,11 +1,8 @@
 #include "application.h"
 
 namespace Compass {
-    Application::Application() {}
-
-    Application::~Application() {}
-
     void Application::Run() {
-        while (true){}
+        _isRunning = true;
+        while (_isRunning){}
     }
 }

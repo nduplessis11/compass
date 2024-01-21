@@ -1,10 +1,14 @@
 ﻿#include <compass.h>
 
-class LabApplication : public Compass::Application {
+class LabApplication final : public Compass::Application {
 public:
-	LabApplication() {}
+    LabApplication() = default;
+    LabApplication(const LabApplication &other) = delete;
+    LabApplication(LabApplication &&) = delete;
+    LabApplication &operator=(const LabApplication &other) = delete;
+    LabApplication &operator=(LabApplication &&) = delete;
 
-	~LabApplication() {}
+    ~LabApplication() final = default;
 };
 
 Compass::Application *Compass::CreateApplication() {
