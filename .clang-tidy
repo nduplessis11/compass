@@ -8,7 +8,8 @@ Checks: '-*,
         concurrency-*,
         cppcoreguidelines-*,
         -clang-diagnostic-unused-command-line-argument,
-        -modernize-use-trailing-return-type,'
+        -modernize-use-trailing-return-type,
+        -bugprone-easily-swappable-parameters'
 WarningsAsErrors: ''
 HeaderFilterRegex: '.*'
 FormatStyle:     none

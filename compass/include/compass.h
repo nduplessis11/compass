@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 #include "version.h"
 
 #include "../src/core/defines.h"

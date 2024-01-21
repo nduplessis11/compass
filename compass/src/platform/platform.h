@@ -3,15 +3,15 @@
 namespace Compass {
     class IPlatform {
     public:
-        IPlatform() = delete;
+        IPlatform() = default;
         IPlatform(const IPlatform &) = delete;
         IPlatform(IPlatform &&) = delete;
         IPlatform &operator=(const IPlatform &) = delete;
-        IPlatform &operator=(IPlatform &&) = delete;
-        virtual ~IPlatform() = delete;
+         IPlatform &operator=(IPlatform &&) = delete;
+        virtual ~IPlatform() = 0;
 
         virtual void Initialize() = 0;
         virtual void Shutdown() = 0;
-        virtual void DisplayMessage(const char *message) const = 0;
+        virtual void PollEvents() const = 0;
     };
 }
