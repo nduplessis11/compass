@@ -10,7 +10,7 @@ namespace Compass {
          IPlatform &operator=(IPlatform &&) = delete;
         virtual ~IPlatform() = 0;
 
-        virtual void Initialize() = 0;
+        virtual bool Initialize() = 0;
         virtual void Shutdown() = 0;
         virtual void PollEvents() const = 0;
     };
