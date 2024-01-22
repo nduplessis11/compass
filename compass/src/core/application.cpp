@@ -16,5 +16,6 @@ namespace Compass {
             const uint32_t SLEEP_TIME_MILSCNDS = 10;
             Sleep(SLEEP_TIME_MILSCNDS);
         }
+        pPlatform->Shutdown();
     }
 }

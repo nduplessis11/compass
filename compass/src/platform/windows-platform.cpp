@@ -43,7 +43,7 @@ namespace Compass {
         }
 
         const uint16_t WIDTH = 800;
-        const uint16_t HEIGHT = 800;
+        const uint16_t HEIGHT = 600;
         _hWnd = CreateWindowExA(0, "compass_window_class", "Compass",
                        WS_OVERLAPPEDWINDOW | WS_VISIBLE, CW_USEDEFAULT,
                        CW_USEDEFAULT, WIDTH, HEIGHT,
@@ -59,7 +59,14 @@ namespace Compass {
     }
 
     void WindowsPlatform::Shutdown() {
+        // TODO: Handle _hWnd
+        // TODO: Handle _hInstance
 
+        // This is assuming WM_CLOSE called DestroyWindow(). Need to find a
+        // way to handle this w/o calling DestroyWindow() twice on the same 
+        // hWnd
+        _hWnd = nullptr;
+        _hInstance = nullptr;
     }
 
     [[nodiscard]] bool WindowsPlatform::PollEvents() const {
