@@ -45,9 +45,7 @@ configure_file(
     "${PROJECT_BINARY_DIR}/version.h"
 )
 
-
 add_subdirectory("compass")
-
 add_subdirectory("lab")
 
 # Add clang warnings options to both C and C++ targets
