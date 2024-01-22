@@ -8,6 +8,7 @@ namespace Compass {
     LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
         switch (uMsg) {
         case WM_CLOSE:
+            // TODO: Create event system. Fire event for application to quit
             DestroyWindow(hWnd);
             break;
         case WM_DESTROY:
