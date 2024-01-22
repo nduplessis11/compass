@@ -1,21 +1,24 @@
 # List of source files
 set(SRC_FILES
     "src/core/application.cpp"
-    #"src/platform/windows_platform.cpp"
- )
+    "src/platform/platform.cpp" 
+    "src/core/entrypoint.cpp"
+)
 
 # List of header files
 set(HDR_FILES
     "src/core/defines.h"
     "include/compass.h"
     "src/core/application.h"
-    "src/core/entry-point.h" 
-    "src/platform/platform.h")
+    "src/core/entrypoint.h" 
+    "src/platform/platform.h"
+)
 
 # Conditionally include or exclude the file based on the platform
 if(WIN32)
     # Include these files on Windows
-    list(APPEND SRC_FILES "src/platform/windows_platform.cpp")
+    list(APPEND SRC_FILES "src/platform/windows-platform.cpp")
+    list(APPEND HDR_FILES "src/platform/windows-platform.h")
 endif()
 
 add_library(compass STATIC ${SRC_FILES} ${HDR_FILES})

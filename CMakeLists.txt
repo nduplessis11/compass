@@ -28,7 +28,7 @@ set(CLANG_WARNINGS
         -Wimplicit-fallthrough # warn on statements that fallthrough without an explicit annotation
 )
 
-#set(CMAKE_CXX_CLANG_TIDY clang-tidy)
+set(CMAKE_CXX_CLANG_TIDY clang-tidy)
 
 # Export compile commands
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -45,9 +45,7 @@ configure_file(
     "${PROJECT_BINARY_DIR}/version.h"
 )
 
-
 add_subdirectory("compass")
-
 add_subdirectory("lab")
 
 # Add clang warnings options to both C and C++ targets

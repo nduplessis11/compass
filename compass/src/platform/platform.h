@@ -12,6 +12,6 @@ namespace Compass {
 
         virtual bool Initialize() = 0;
         virtual void Shutdown() = 0;
-        virtual void PollEvents() const = 0;
+        [[nodiscard]] virtual bool PollEvents() const = 0;
     };
 }
