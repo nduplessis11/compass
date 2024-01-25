@@ -1,5 +1,4 @@
 ﻿#include <compass.h>
-#include <gsl/gsl>
 
 class LabApplication final : public Compass::Application {
   public:
@@ -12,6 +11,6 @@ class LabApplication final : public Compass::Application {
     ~LabApplication() override = default;
 };
 
-gsl::owner<Compass::Application *> Compass::CreateApplication() {
-    return new LabApplication();
+std::unique_ptr<Compass::Application> Compass::CreateApplication() {
+    return std::make_unique<LabApplication>();
 }

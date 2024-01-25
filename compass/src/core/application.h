@@ -1,4 +1,5 @@
 #pragma once
+#include <complex>
 
 namespace Compass {
 class Application {
@@ -18,5 +19,5 @@ class Application {
 };
 
 // To be defined in client
-extern Application *CreateApplication();
+extern std::unique_ptr<Application> CreateApplication();
 }
