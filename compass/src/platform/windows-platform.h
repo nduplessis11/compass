@@ -1,13 +1,15 @@
+#pragma once
+
 #include "platform.h"
 
 #include <windows.h>
-#include <cstdint>
 
 namespace Compass {
     class WindowsPlatform final : public IPlatform {
     public:
         bool Initialize() final;
         void Shutdown() final;
+        void WriteToConsole(std::string_view text) final;
         [[nodiscard]] bool PollEvents() const final;
 
     private:

@@ -4,8 +4,8 @@
 #include <cstdint>
 
 namespace Compass {
-    // NOLINTNEXTLINE(bugprone-easily-swappable-parameters)
-    LRESULT CALLBACK WindowProc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam) {
+    // ReSharper disable once CppParameterMayBeConst
+    LRESULT CALLBACK WindowProc(HWND hWnd, const UINT uMsg, const WPARAM wParam, const LPARAM lParam) {
         switch (uMsg) {
         case WM_CLOSE:
             // TODO: Create event system. Fire event for application to quit
@@ -43,8 +43,8 @@ namespace Compass {
             return false;
         }
 
-        const uint16_t WIDTH = 800;
-        const uint16_t HEIGHT = 600;
+        constexpr uint16_t WIDTH = 800;
+        constexpr uint16_t HEIGHT = 600;
         _hWnd = CreateWindowExA(0, "compass_window_class", "Compass",
                        WS_OVERLAPPEDWINDOW | WS_VISIBLE, CW_USEDEFAULT,
                        CW_USEDEFAULT, WIDTH, HEIGHT,
@@ -68,6 +68,9 @@ namespace Compass {
         // hWnd
         _hWnd = nullptr;
         _hInstance = nullptr;
+    }
+
+    void WindowsPlatform::WriteToConsole(std::string_view text){
     }
 
     [[nodiscard]] bool WindowsPlatform::PollEvents() const {

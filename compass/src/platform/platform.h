@@ -1,4 +1,5 @@
 #pragma once
+#include <string_view>
 
 namespace Compass {
     class IPlatform {
@@ -13,5 +14,6 @@ namespace Compass {
         virtual bool Initialize() = 0;
         virtual void Shutdown() = 0;
         [[nodiscard]] virtual bool PollEvents() const = 0;
+        virtual void WriteToConsole(std::string_view text) = 0;
     };
 }

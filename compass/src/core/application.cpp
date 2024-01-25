@@ -4,7 +4,7 @@
 
 namespace Compass {
     void Application::Run() {
-        auto pPlatform = std::make_unique<Compass::WindowsPlatform>();
+        const auto pPlatform = std::make_unique<Compass::WindowsPlatform>();
         pPlatform->Initialize();
 
         _isRunning = true;
@@ -13,7 +13,7 @@ namespace Compass {
                 _isRunning = false;
             }
 
-            const uint32_t SLEEP_TIME_MILSCNDS = 10;
+            constexpr uint32_t SLEEP_TIME_MILSCNDS = 10;
             Sleep(SLEEP_TIME_MILSCNDS);
         }
         pPlatform->Shutdown();
