@@ -45,11 +45,11 @@ bool WindowsPlatform::Initialize() {
         return false;
     }
 
-    constexpr uint16_t WIDTH  = 800;
-    constexpr uint16_t HEIGHT = 600;
+    constexpr uint16_t width  = 800;
+    constexpr uint16_t height = 600;
     _hWnd = CreateWindowExA(0, "compass_window_class", "Compass",
                             WS_OVERLAPPEDWINDOW | WS_VISIBLE, CW_USEDEFAULT,
-                            CW_USEDEFAULT, WIDTH, HEIGHT, nullptr, nullptr,
+                            CW_USEDEFAULT, width, height, nullptr, nullptr,
                             _hInstance, nullptr);
 
     if (_hWnd == nullptr) {
