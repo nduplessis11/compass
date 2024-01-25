@@ -1,4 +1,5 @@
 ﻿#include <compass.h>
+#include <gsl/gsl>
 
 class LabApplication final : public Compass::Application {
   public:
@@ -8,9 +9,9 @@ class LabApplication final : public Compass::Application {
     LabApplication &operator=(const LabApplication &)      = delete;
     LabApplication &operator=(LabApplication &&)           = delete;
 
-    ~LabApplication() final = default;
+    ~LabApplication() override = default;
 };
 
-Compass::Application *Compass::CreateApplication() {
+gsl::owner<Compass::Application *> Compass::CreateApplication() {
     return new LabApplication();
 }
