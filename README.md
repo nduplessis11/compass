@@ -1,6 +1,7 @@
 # Compass Game Engine
 
-This is a personal learning project to develop a cross-platform game engine using Vulkan as the renderer. The goal is to gain hands-on experience with graphics programming, engine architecture, and cross-platform development.
+This is a personal learning project to develop a cross-platform game engine using Vulkan as the renderer. The goal is to
+gain hands-on experience with graphics programming, engine architecture, and cross-platform development.
 
 ## Features
 

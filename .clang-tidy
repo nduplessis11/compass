@@ -10,4 +10,4 @@ Checks: '*,
         -modernize-use-trailing-return-type'
 WarningsAsErrors: ''
 HeaderFilterRegex: '.*'
-FormatStyle:     none
+FormatStyle: none
