@@ -9,12 +9,12 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Define clang warnings options
-set(CLANG_WARNINGS 
+set(CLANG_WARNINGS
         -Wall
         -Wextra # reasonable and standard
         -Wshadow # warn the user if a variable declaration shadows one from a parent context
         -Wnon-virtual-dtor # warn the user if a class with virtual functions has a non-virtual destructor.
-                           # This helps catch hard to track down memory errors
+        # This helps catch hard to track down memory errors
         -Wold-style-cast # warn for c-style casts
         -Wcast-align # warn for potential performance problem casts
         -Wunused # warn on anything being unused
@@ -34,15 +34,15 @@ set(CMAKE_CXX_CLANG_TIDY clang-tidy)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 project(
-	compass 
-	VERSION 0.1.0
-	LANGUAGES CXX
+        compass
+        VERSION 0.1.0
+        LANGUAGES CXX
 )
 
 # Configure version header
 configure_file(
-    "${PROJECT_SOURCE_DIR}/version.h.in"
-    "${PROJECT_BINARY_DIR}/version.h"
+        "${PROJECT_SOURCE_DIR}/version.h.in"
+        "${PROJECT_BINARY_DIR}/version.h"
 )
 
 add_subdirectory("compass")
