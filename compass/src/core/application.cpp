@@ -13,8 +13,8 @@ void Application::Run() {
             _isRunning = false;
         }
 
-        constexpr uint32_t SLEEP_TIME_MILSCNDS = 10;
-        Sleep(SLEEP_TIME_MILSCNDS);
+        constexpr uint32_t sleepTimeMilsecs = 10;
+        Sleep(sleepTimeMilsecs);
     }
     pPlatform->Shutdown();
 }
