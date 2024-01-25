@@ -34,20 +34,25 @@
     {
       "name": "x64-debug",
       "displayName": "x64 Debug",
-      "description": "Target Windows (64-bit) with the Visual Studio development environment. (Debug)",
+      "description": "Target Windows (64-bit). (Debug)",
       "inherits": "windows-base",
-      "architecture": {
-        "value": "x64",
-        "strategy": "external"
-      },
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug"
       }
     },
     {
+      "name": "x64-rel-deb-info",
+      "displayName": "x64 Debug",
+      "description": "Target Windows (64-bit). (RelWithDebInfo)",
+      "inherits": "windows-base",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      }
+    },
+    {
       "name": "x64-release",
       "displayName": "x64 Release",
-      "description": "Target Windows (64-bit) with the Visual Studio development environment. (RelWithDebInfo)",
+      "description": "Target Windows (64-bit). (Release)",
       "inherits": "x64-debug",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Release"
