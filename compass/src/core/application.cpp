@@ -1,12 +1,16 @@
 #include "application.h"
 #include <memory>
 #include "../platform/windows-platform.h"
+#include "logger.h"
 
 namespace Compass {
 void Application::Run() {
     const auto pPlatform = std::make_unique<WindowsPlatform>();
     pPlatform->Initialize();
     pPlatform->WriteToConsole("Hello, world!\n");
+
+    // TODO: Rethink this
+    // const auto pLogger = ILogger::GetInstance();
 
     _isRunning = true;
     while (_isRunning) {

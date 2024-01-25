@@ -74,6 +74,9 @@ void WindowsPlatform::Shutdown() {
 }
 
 void WindowsPlatform::WriteToConsole(const std::string_view text) {
+    // TODO: Buffer output
+    // TODO: Asynchronous writes
+
     // ReSharper disable once CppLocalVariableMayBeConst
     if (HANDLE stdOut = GetStdHandle(STD_OUTPUT_HANDLE)) {
         DWORD written = 0;

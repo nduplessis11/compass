@@ -3,6 +3,7 @@ set(SRC_FILES
         "src/core/application.cpp"
         "src/platform/platform.cpp"
         "src/core/entrypoint.cpp"
+        "src/core/logger.cpp"
 )
 
 # List of header files
@@ -12,6 +13,7 @@ set(HDR_FILES
         "src/core/application.h"
         "src/core/entrypoint.h"
         "src/platform/platform.h"
+        "src/core/logger.h"
 )
 
 # Conditionally include or exclude the file based on the platform
