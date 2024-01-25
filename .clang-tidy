@@ -9,5 +9,5 @@ Checks: '*,
         -zircon-*,
         -modernize-use-trailing-return-type'
 WarningsAsErrors: ''
-HeaderFilterRegex: '.*'
+HeaderFilterRegex: ''
 FormatStyle: none

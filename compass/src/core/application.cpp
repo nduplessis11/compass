@@ -4,7 +4,7 @@
 
 namespace Compass {
 void Application::Run() {
-    const auto pPlatform = std::make_unique<Compass::WindowsPlatform>();
+    const auto pPlatform = std::make_unique<WindowsPlatform>();
     pPlatform->Initialize();
 
     _isRunning = true;

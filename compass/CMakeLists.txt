@@ -29,3 +29,5 @@ target_include_directories(compass
         PUBLIC "include"
         PUBLIC "${PROJECT_BINARY_DIR}"
 )
+
+target_link_libraries(compass PRIVATE Microsoft.GSL)

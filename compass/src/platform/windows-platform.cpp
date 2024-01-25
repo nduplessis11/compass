@@ -5,18 +5,18 @@
 
 namespace Compass {
 // ReSharper disable once CppParameterMayBeConst
-LRESULT CALLBACK WindowProc(HWND hWnd, const UINT uMsg, const WPARAM wParam,
-                            const LPARAM lParam) {
-    switch (uMsg) {
+LRESULT CALLBACK WindowProc(HWND h_wnd, const UINT u_msg, const WPARAM w_param,
+                            const LPARAM l_param) {
+    switch (u_msg) {
         case WM_CLOSE:
             // TODO: Create event system. Fire event for application to quit
-            DestroyWindow(hWnd);
+            DestroyWindow(h_wnd);
             break;
         case WM_DESTROY:
             PostQuitMessage(0);
             return 0;
         default:
-            return DefWindowProcA(hWnd, uMsg, wParam, lParam);
+            return DefWindowProcA(h_wnd, u_msg, w_param, l_param);
     }
 
     return 0;

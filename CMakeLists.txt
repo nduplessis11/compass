@@ -47,6 +47,11 @@ configure_file(
 
 add_subdirectory("compass")
 add_subdirectory("lab")
+add_subdirectory("thirdparty/gsl")
+
+# Add GSL as an interface library
+add_library(Microsoft.GSL INTERFACE)
+target_include_directories(Microsoft.GSL INTERFACE "thirdparty/gsl/include")
 
 # Add clang warnings options to both C and C++ targets
 target_compile_options(compass PRIVATE ${CLANG_WARNINGS})
