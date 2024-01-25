@@ -2,6 +2,7 @@
 
 #include <windows.h>
 #include <cstdint>
+#include <vector>
 
 namespace Compass {
 // ReSharper disable once CppParameterMayBeConst
@@ -72,7 +73,13 @@ void WindowsPlatform::Shutdown() {
     _hInstance = nullptr;
 }
 
-void WindowsPlatform::WriteToConsole(std::string_view text) {
+void WindowsPlatform::WriteToConsole(const std::string_view text) {
+    // ReSharper disable once CppLocalVariableMayBeConst
+    if (HANDLE stdOut = GetStdHandle(STD_OUTPUT_HANDLE)) {
+        DWORD written = 0;
+        WriteConsoleA(stdOut, text.data(), static_cast<DWORD>(text.size()),
+                      &written, nullptr);
+    }
 }
 
 [[nodiscard]] bool WindowsPlatform::PollEvents() const {
