@@ -3,7 +3,9 @@
 
 #include <memory>
 
-int main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) {
-    const auto app = std::unique_ptr(Compass::CreateApplication());
+auto main([[maybe_unused]] int argc, [[maybe_unused]] char **argv) -> int {
+    const auto app = Compass::CreateApplication();
     app->Run();
+
+    return 0;
 }

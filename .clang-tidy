@@ -6,8 +6,7 @@ Checks: '*,
         -fuchsia-*,
         -google-*,
         -llvm*,
-        -zircon-*,
-        -modernize-use-trailing-return-type'
+        -zircon-*'
 WarningsAsErrors: ''
 HeaderFilterRegex: ''
 FormatStyle: none

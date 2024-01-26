@@ -7,10 +7,10 @@
 namespace Compass {
 class WindowsPlatform final : public IPlatform {
   public:
-    bool               Initialize() override;
+    auto               Initialize() -> bool override;
     void               Shutdown() override;
     void               WriteToConsole(std::string_view text) override;
-    [[nodiscard]] bool PollEvents() const override;
+    [[nodiscard]] auto PollEvents() const -> bool override;
 
   private:
     HINSTANCE _hInstance = nullptr;

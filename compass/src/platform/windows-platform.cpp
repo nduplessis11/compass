@@ -6,8 +6,8 @@
 
 namespace Compass {
 // ReSharper disable once CppParameterMayBeConst
-LRESULT CALLBACK WindowProc(HWND h_wnd, const UINT u_msg, const WPARAM w_param,
-                            const LPARAM l_param) {
+auto CALLBACK WindowProc(HWND h_wnd, const UINT u_msg, const WPARAM w_param,
+                         const LPARAM l_param) -> LRESULT {
     switch (u_msg) {
         case WM_CLOSE:
             // TODO: Create event system. Fire event for application to quit
@@ -23,7 +23,7 @@ LRESULT CALLBACK WindowProc(HWND h_wnd, const UINT u_msg, const WPARAM w_param,
     return 0;
 }
 
-bool WindowsPlatform::Initialize() {
+auto WindowsPlatform::Initialize() -> bool {
     _hInstance = GetModuleHandleA(nullptr);
 
     WNDCLASSEXA windowClass{};
@@ -85,7 +85,7 @@ void WindowsPlatform::WriteToConsole(const std::string_view text) {
     }
 }
 
-[[nodiscard]] bool WindowsPlatform::PollEvents() const {
+[[nodiscard]] auto WindowsPlatform::PollEvents() const -> bool {
     MSG msg{};
 
     while (PeekMessageA(&msg, nullptr, 0U, 0U, PM_REMOVE) != 0) {

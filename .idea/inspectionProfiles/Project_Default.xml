@@ -2,7 +2,9 @@
   <profile version="1.0">
     <option name="myName" value="Project Default" />
     <inspection_tool class="ClangTidy" enabled="true" level="WARNING" enabled_by_default="false">
-      <scope name="compass" level="WARNING" enabled="true" />
+      <scope name="compass" level="WARNING" enabled="true">
+        <option name="clangTidyChecks" value="*,-abseil-*,-altera-*,-android-*,-fuchsia-*,-google-*,-llvm*,-zircon-*" />
+      </scope>
     </inspection_tool>
     <inspection_tool class="CppInconsistentNaming" enabled="true" level="WARNING" enabled_by_default="true" />
     <inspection_tool class="CppLocalVariableWithNonTrivialDtorIsNeverUsed" enabled="true" level="WARNING" enabled_by_default="true" />
