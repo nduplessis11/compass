@@ -7,6 +7,7 @@ set(CMAKE_CXX_COMPILER "clang++")
 # Set C++ standard to C++20
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Define clang warnings options
 set(CLANG_WARNINGS
