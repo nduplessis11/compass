@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.25.1)
 
 # Set compilers
-set(CMAKE_C_COMPILER "clang")
-set(CMAKE_CXX_COMPILER "clang++")
+set(CMAKE_C_COMPILER "clang-cl")
+set(CMAKE_CXX_COMPILER "clang-cl")
 
 # Set C++ standard to C++20
 set(CMAKE_CXX_STANDARD 20)
@@ -11,7 +11,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 # Define clang warnings options
 set(CLANG_WARNINGS
-        -Wall
+        -Wall # includes different warnings between clang++/clang-cl
         -Wextra # reasonable and standard
         -Wshadow # warn the user if a variable declaration shadows one from a parent context
         -Wnon-virtual-dtor # warn the user if a class with virtual functions has a non-virtual destructor.
@@ -27,6 +27,11 @@ set(CLANG_WARNINGS
         -Wdouble-promotion # warn if float is implicit promoted to double
         -Wformat=2 # warn on security issues around functions that format output (ie printf)
         -Wimplicit-fallthrough # warn on statements that fallthrough without an explicit annotation
+        -Wno-c++98-compat
+        -Wno-c++98-compat-pedantic
+        -Wno-newline-eof
+        -Wno-nonportable-system-include-path
+        -Wno-missing-prototypes
 )
 
 set(CMAKE_CXX_CLANG_TIDY clang-tidy)

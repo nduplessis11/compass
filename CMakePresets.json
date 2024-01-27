@@ -60,7 +60,7 @@
     },
     {
       "name": "linux-base",
-      "description": "Target Linux with the VScode environment.",
+      "description": "Target Linux with the VSCode environment.",
       "inherits": "global",
       "hidden": true,
       "cacheVariables": {

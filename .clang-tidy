@@ -6,7 +6,8 @@ Checks: '*,
         -fuchsia-*,
         -google-*,
         -llvm*,
-        -zircon-*'
+        -zircon-*
+        -misc-include-cleaner'
 WarningsAsErrors: ''
 HeaderFilterRegex: ''
 FormatStyle: none
